@@ -29,7 +29,7 @@ int main(){
         else if(op == 'T'){
             int d = shortestPathTSP();
             if(d == INFINITY) d = -1;
-            printf("Shortest path TSP : %d\n", d);
+            printf("Shortest path TSP: %d\n", d);
         }
 
         #ifdef DEBUG_  
