@@ -24,12 +24,12 @@ int main(){
             scanf("%d", &end);
             int d = shortestPath(start, end);
             if(d == INFINITY) d = -1;
-            printf("Dijsktra shortest path: %d\n", d);
+            printf("Dijsktra shortest path: %d \n", d);
         }       
         else if(op == 'T'){
             int d = shortestPathTSP();
             if(d == INFINITY) d = -1;
-            printf("Shortest path TSP: %d\n", d);
+            printf("TSP shortest path: %d \n", d);
         }
 
         #ifdef DEBUG_  
