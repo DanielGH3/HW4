@@ -72,7 +72,10 @@ void insert_node(int n){
 
         create_new_node(n);
         index = graph_size - 1;
+    }else{
+        graph[index].edges = realloc(graph[index].edges, graph_size * sizeof(edge)); 
     }
+    
     graph[index].node_num = n;
 
     //read the connections + weights and assign them
@@ -111,7 +114,7 @@ void delete_node(int n){
     graph_size--;
     graph = realloc(graph, graph_size * sizeof(node));
 
-    for(int i = 0; i < graph_size - 1; i++){
+    for(int i = 0; i < graph_size; i++){
         for(int j = 0; j < graph[i].num_of_edges; j++){
             if(graph[i].edges[j].endpoint == n){
                 while(j < graph[i].num_of_edges - 1){
@@ -145,6 +148,7 @@ void deleteGraph(){
     for(int i = graph_size - 1; i >= 0; i--){
         delete_node(graph[i].node_num);
     }
+    free(graph);
 }
 
 int nextPermutation(int *arr, int n) {
